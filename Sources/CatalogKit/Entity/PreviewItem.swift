@@ -8,9 +8,30 @@
 import UIKit
 import SwiftUI
 
-public struct PreviewItem<PreviewType: PreviewProvider> {
+public struct PreviewItem: View, Identifiable {
+    public typealias ID = AnyHashable
+    private let _id: ID
+    public var id: ID {
+        return _id
+    }
+
     /// Component Title
     let title: String
     /// Component Preview
-    let preview: PreviewType
+    private let _preview: AnyView
+    public var body: some View {
+        _preview
+    }
+
+    init?<Content>(title: String, view: Content?) where Content: View & Identifiable{
+        guard let view = view else { return nil }
+        self.title = title
+        self._preview = AnyView(view)
+        self._id = view.id
+    }
+}
+
+public extension Identifiable where Self: Hashable {
+    typealias ID = Self
+    var id: Self { self }
 }

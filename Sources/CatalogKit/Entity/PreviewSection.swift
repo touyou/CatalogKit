@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct PreviewSection {
+public struct PreviewSection: Hashable {
     /// Section Title
     let title: String
     /// PreviewItems
-    let items: [PreviewSection]
+    let items: [PreviewItem]
 }
