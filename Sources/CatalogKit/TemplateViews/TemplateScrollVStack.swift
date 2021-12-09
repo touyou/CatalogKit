@@ -11,7 +11,7 @@ public struct TemplateScrollVStack<Content: View>: View {
     let title: String
     @ViewBuilder let content: () -> Content
 
-    init(title: String, @ViewBuilder content: @escaping () -> Content) {
+    public init(title: String, @ViewBuilder content: @escaping () -> Content) {
         self.title = title
         self.content = content
     }
