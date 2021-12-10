@@ -13,4 +13,6 @@ Previewで確認しながら開発しているものをチームに共有する�
 - AppLibrary/SampleComponent/CatalogView.swiftを参照してください
 - Previewは`public`にしても他の場所から読み込めないようなので、コンポーネントライブラリ内で`View`を構築する方法を想定しています
 
-## Licence
+## License
+
+[MIT](LICENSE)
