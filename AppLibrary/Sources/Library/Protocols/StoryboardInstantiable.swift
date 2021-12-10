@@ -16,8 +16,8 @@ public extension StoryboardInstantiable where Self: UIViewController {
         return String(describing: self)
     }
 
-    static func instantiate() -> Self {
-        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+    static func instantiate(in bundle: Bundle) -> Self {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: bundle)
         guard let controller = storyboard.instantiateInitialViewController() as? Self else {
             fatalError("Not Found \(storyboardName).swift.")
         }
