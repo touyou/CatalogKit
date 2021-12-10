@@ -14,10 +14,10 @@ public struct CatalogView: View {
     public var body: some View {
         PreviewAppMasterView(previewSections: [
             PreviewSection(title: "SwiftUI - Libs", items: [
-                PreviewItem(title: "Button", view: SampleButtonAppearance_Previews.previews)
+                PreviewItem(title: "Button", view: SampleButtonAppearance_Previews.self)
             ]),
             PreviewSection(title: "UIKit - Libs", items: [
-                PreviewItem(title: "Button", view: SampleButtonUIKit_Previews.previews)
+                PreviewItem(title: "Button", view: SampleButtonUIKit_Previews.self)
             ])
         ])
     }

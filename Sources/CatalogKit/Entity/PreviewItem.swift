@@ -13,9 +13,9 @@ public struct PreviewItem {
     /// Component Preview
     let preview: AnyView
     
-    public init<Content: View>(title: String, view: Content) {
+    public init<Content: PreviewProvider>(title: String, view: Content.Type) {
         self.title = title
-        self.preview = AnyView(view)
+        self.preview = AnyView(view.previews)
     }
 }
 
