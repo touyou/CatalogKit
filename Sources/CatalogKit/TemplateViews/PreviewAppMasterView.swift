@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  PreviewAppMasterView.swift
 //  
 //
 //  Created by emp-mac-yosuke-fujii on 2021/12/09.
@@ -10,25 +10,41 @@ import SwiftUI
 public struct PreviewAppMasterView: View {
     let previewSections: [PreviewSection]
     @State private var selectedPreview: PreviewItem?
-
+    
     public var body: some View {
         NavigationView {
             List {
-                ForEach(previewSections, id: \.self) { section in
+                ForEach(0 ..< previewSections.count, id: \.self) { index in
+                    let section = previewSections[index]
                     Section(header: Text(section.title)) {
-                        ForEach(section.items, id: \.self) { preview in
-                            Text(preview.title).onTapGesture {
+                        ForEach(0 ..< section.items.count, id: \.self) { itemIndex in
+                            let preview = section.items[itemIndex]
+                            HStack {
+                                Text(preview.title)
+                                Spacer()
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
                                 self.selectedPreview = preview
                             }
                         }
                     }
                 }
             }
+            .listStyle(.automatic)
+            
+            if let selectedPreview = selectedPreview {
+                selectedPreview.preview
+            } else {
+                Text("プレビューするコンポーネントを選んでください")
+                    .font(.body)
+                    .foregroundColor(.gray)
+            }
         }
     }
 }
 
-private struct PreviewAppMasterView_Previews: PreviewProvider {
+struct PreviewAppMasterView_Previews: PreviewProvider {
     static var previews: some View {
         PreviewAppMasterView(previewSections: [
             PreviewSection(title: "First", items: [
@@ -47,11 +63,5 @@ private struct PreviewAppMasterView_Previews: PreviewProvider {
                 PreviewItem(title: "Item3", view: PreviewSample_Previews.previews)
             ])
         ])
-    }
-}
-
-private struct PreviewSample_Previews: PreviewProvider {
-    static var previews: some View {
-        Text("Hello World")
     }
 }
