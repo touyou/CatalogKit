@@ -53,6 +53,13 @@ public class SampleButton: UIButton {
         }
     }
 
+    public override var isHighlighted: Bool {
+        didSet {
+            changeBackgroundColor()
+            changeBorder()
+        }
+    }
+
     public func configureProps(
         font: UIFont,
         titleColor: UIColor,
@@ -88,6 +95,7 @@ public class SampleButton: UIButton {
         layer.cornerRadius = 10.0
         contentEdgeInsets = UIEdgeInsets(top: 8.0, left: 16.0, bottom: 8.0, right: 16.0)
         setTitleColor(titleColor, for: .normal)
+        setTitleColor(titleColor.withAlphaComponent(0.5), for: .highlighted)
         setTitleColor(disabledTitleColor, for: .disabled)
         titleLabel?.font = titleFont
         changeBackgroundColor()
@@ -105,15 +113,15 @@ public class SampleButton: UIButton {
 
     private func changeBackgroundColor() {
         if isEnabled {
-            backgroundColor = isOutlined ? .clear : defaultBackgroundColor
+            backgroundColor = isOutlined || defaultBackgroundColor == .clear ? .clear : defaultBackgroundColor.withAlphaComponent(isHighlighted ? 0.5 : 1.0)
         } else {
-            backgroundColor = isOutlined ? .clear : disabledBackgroundColor
+            backgroundColor = isOutlined || disabledBackgroundColor == .clear ? .clear : disabledBackgroundColor.withAlphaComponent(isHighlighted ? 0.5 : 1.0)
         }
     }
 
     private func changeBorder() {
         let borderColor = isEnabled ? defaultBackgroundColor : disabledBackgroundColor
-        layer.borderColor = (isOutlined ? borderColor : .clear).cgColor
+        layer.borderColor = (isOutlined ? borderColor.withAlphaComponent(isHighlighted ? 0.5 : 1.0) : .clear).cgColor
         layer.borderWidth = isOutlined ? 1.0 : 0.0
     }
 }
