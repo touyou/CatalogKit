@@ -85,8 +85,8 @@ public struct SampleButtonAppearance: ButtonAppearance {
     )
 }
 
-public struct SampleButtonAppearance_Previews: PreviewProvider {
-    public static var previews: some View {
+struct SampleButtonAppearance_Previews: PreviewProvider {
+    static var previews: some View {
         TemplateScrollVStack(title: "Button Style") {
             HStack(spacing: 4.0) {
                 Button("Large Filled") {}

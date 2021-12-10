@@ -238,8 +238,8 @@ public struct ViewWrapper: View {
     }
 }
 
-public struct SampleButtonUIKit_Previews: PreviewProvider {
-    public static var previews: some View {
+struct SampleButtonUIKit_Previews: PreviewProvider {
+    static var previews: some View {
         TemplateScrollVStack(title: "UIKit Button Styles") {
             HStack(spacing: 4.0) {
                 ViewWrapper(view: .largeFilled(), title: "Large Filled")
