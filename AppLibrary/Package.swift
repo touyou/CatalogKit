@@ -1,27 +1,29 @@
 // swift-tools-version:5.5
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "AppLibrary",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v14)
     ],
     products: [
         .library(name: "AppViews", type: .dynamic, targets: ["AppViews"]),
+        .library(name: "Library", type: .dynamic, targets: ["Library"]),
         .library(name: "SampleComponent", type: .dynamic, targets: ["SampleComponent"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/touyou/CatalogKit", from: "1.0.0"),
+        .package(name: "CatalogKit", url: "https://github.com/touyou/CatalogKit", .branch("main")),
     ],
     targets: [
-        .target(name: "AppViews", dependencies: ["SampleComponent"]),
-        .target(
-            name: "SampleComponent",
-            dependencies: ["CatalogKit"]),
-        .testTarget(
-            name: "SampleComponentTests",
-            dependencies: ["SampleComponent"]),
+        .target(name: "AppViews", dependencies: [
+            .target(name: "SampleComponent"),
+            .target(name: "Library")
+        ]),
+        .target(name: "Library", dependencies: []),
+        .target(name: "SampleComponent", dependencies: [
+            .product(name: "CatalogKit", package: "CatalogKit")
+        ]),
+        .testTarget(name: "SampleComponentTests", dependencies: ["SampleComponent"]),
     ]
 )

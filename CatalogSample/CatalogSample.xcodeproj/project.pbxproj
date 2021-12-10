@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4390B4862761B9550037C6DB /* CatalogSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390B4852761B9550037C6DB /* CatalogSampleApp.swift */; };
-		4390B4882761B9550037C6DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390B4872761B9550037C6DB /* ContentView.swift */; };
 		4390B48A2761B9570037C6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B4892761B9570037C6DB /* Assets.xcassets */; };
 		4390B48D2761B9570037C6DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B48C2761B9570037C6DB /* Preview Assets.xcassets */; };
-		43CE8E1527631D4F001DEC44 /* SampleComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E1427631D4F001DEC44 /* SampleComponent */; };
-		43CE8E1627631D4F001DEC44 /* SampleComponent in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E1427631D4F001DEC44 /* SampleComponent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		43C102F82763373A0004FDBB /* SampleComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 43C102F72763373A0004FDBB /* SampleComponent */; };
+		43C102F92763373A0004FDBB /* SampleComponent in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 43C102F72763373A0004FDBB /* SampleComponent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,7 +21,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43CE8E1627631D4F001DEC44 /* SampleComponent in Embed Frameworks */,
+				43C102F92763373A0004FDBB /* SampleComponent in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,9 +31,9 @@
 /* Begin PBXFileReference section */
 		4390B4822761B9550037C6DB /* CatalogSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalogSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4390B4852761B9550037C6DB /* CatalogSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSampleApp.swift; sourceTree = "<group>"; };
-		4390B4872761B9550037C6DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4390B4892761B9570037C6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4390B48C2761B9570037C6DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		43CE8E33276336A0001DEC44 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../AppLibrary/Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43CE8E1527631D4F001DEC44 /* SampleComponent in Frameworks */,
+				43C102F82763373A0004FDBB /* SampleComponent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				4390B4852761B9550037C6DB /* CatalogSampleApp.swift */,
-				4390B4872761B9550037C6DB /* ContentView.swift */,
 				4390B4892761B9570037C6DB /* Assets.xcassets */,
 				4390B48B2761B9570037C6DB /* Preview Content */,
 			);
@@ -88,6 +86,7 @@
 		43CE8E062762F9A5001DEC44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43CE8E33276336A0001DEC44 /* Package.swift */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,7 +109,7 @@
 			);
 			name = CatalogSample;
 			packageProductDependencies = (
-				43CE8E1427631D4F001DEC44 /* SampleComponent */,
+				43C102F72763373A0004FDBB /* SampleComponent */,
 			);
 			productName = CatalogSample;
 			productReference = 4390B4822761B9550037C6DB /* CatalogSample.app */;
@@ -168,7 +167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4390B4882761B9550037C6DB /* ContentView.swift in Sources */,
 				4390B4862761B9550037C6DB /* CatalogSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,7 +372,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		43CE8E1427631D4F001DEC44 /* SampleComponent */ = {
+		43C102F72763373A0004FDBB /* SampleComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SampleComponent;
 		};

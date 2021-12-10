@@ -11,8 +11,12 @@
 		4382D06A2761B9EB0007AAD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382D0692761B9EB0007AAD5 /* SceneDelegate.swift */; };
 		4382D0712761B9EC0007AAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4382D0702761B9EC0007AAD5 /* Assets.xcassets */; };
 		4382D0742761B9EC0007AAD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4382D0722761B9EC0007AAD5 /* LaunchScreen.storyboard */; };
-		43CE8E1927631D5B001DEC44 /* SampleComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E1827631D5B001DEC44 /* SampleComponent */; };
-		43CE8E1A27631D5B001DEC44 /* SampleComponent in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E1827631D5B001DEC44 /* SampleComponent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		43CE8E292763246A001DEC44 /* AppViews in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E282763246A001DEC44 /* AppViews */; };
+		43CE8E2A2763246A001DEC44 /* AppViews in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E282763246A001DEC44 /* AppViews */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		43CE8E2C2763246A001DEC44 /* Library in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E2B2763246A001DEC44 /* Library */; };
+		43CE8E2D2763246A001DEC44 /* Library in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E2B2763246A001DEC44 /* Library */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		43CE8E2F2763246A001DEC44 /* SampleComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E2E2763246A001DEC44 /* SampleComponent */; };
+		43CE8E302763246A001DEC44 /* SampleComponent in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E2E2763246A001DEC44 /* SampleComponent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,7 +26,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43CE8E1A27631D5B001DEC44 /* SampleComponent in Embed Frameworks */,
+				43CE8E2D2763246A001DEC44 /* Library in Embed Frameworks */,
+				43CE8E302763246A001DEC44 /* SampleComponent in Embed Frameworks */,
+				43CE8E2A2763246A001DEC44 /* AppViews in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,7 +49,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43CE8E1927631D5B001DEC44 /* SampleComponent in Frameworks */,
+				43CE8E2C2763246A001DEC44 /* Library in Frameworks */,
+				43CE8E2F2763246A001DEC44 /* SampleComponent in Frameworks */,
+				43CE8E292763246A001DEC44 /* AppViews in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +83,6 @@
 				4382D0692761B9EB0007AAD5 /* SceneDelegate.swift */,
 				4382D0702761B9EC0007AAD5 /* Assets.xcassets */,
 				4382D0722761B9EC0007AAD5 /* LaunchScreen.storyboard */,
-				43CE8E132763140C001DEC44 /* ViewControllers */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -85,13 +92,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		43CE8E132763140C001DEC44 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,7 +112,9 @@
 			);
 			name = SampleApp;
 			packageProductDependencies = (
-				43CE8E1827631D5B001DEC44 /* SampleComponent */,
+				43CE8E282763246A001DEC44 /* AppViews */,
+				43CE8E2B2763246A001DEC44 /* Library */,
+				43CE8E2E2763246A001DEC44 /* SampleComponent */,
 			);
 			productName = SampleApp;
 			productReference = 4382D0642761B9EB0007AAD5 /* SampleApp.app */;
@@ -315,7 +317,6 @@
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -344,7 +345,6 @@
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -385,7 +385,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		43CE8E1827631D5B001DEC44 /* SampleComponent */ = {
+		43CE8E282763246A001DEC44 /* AppViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppViews;
+		};
+		43CE8E2B2763246A001DEC44 /* Library */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Library;
+		};
+		43CE8E2E2763246A001DEC44 /* SampleComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SampleComponent;
 		};
