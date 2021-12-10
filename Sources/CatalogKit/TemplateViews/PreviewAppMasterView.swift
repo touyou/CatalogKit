@@ -55,19 +55,19 @@ struct PreviewAppMasterView_Previews: PreviewProvider {
     static var previews: some View {
         PreviewAppMasterView(previewSections: [
             PreviewSection(title: "First", items: [
-                PreviewItem(title: "Item1", view: PreviewSample_Previews.self),
-                PreviewItem(title: "Item2", view: PreviewSample_Previews.self),
-                PreviewItem(title: "Item3", view: PreviewSample_Previews.self)
+                PreviewItem(title: "Item1", previewType: PreviewSample_Previews.self),
+                PreviewItem(title: "Item2", previewType: PreviewSample_Previews.self),
+                PreviewItem(title: "Item3", previewType: PreviewSample_Previews.self)
             ]),
             PreviewSection(title: "Second", items: [
-                PreviewItem(title: "Item1", view: PreviewSample_Previews.self),
-                PreviewItem(title: "Item2", view: PreviewSample_Previews.self),
-                PreviewItem(title: "Item3", view: PreviewSample_Previews.self)
+                PreviewItem(title: "Item1", previewType: PreviewSample_Previews.self),
+                PreviewItem(title: "Item2", previewType: PreviewSample_Previews.self),
+                PreviewItem(title: "Item3", previewType: PreviewSample_Previews.self)
             ]),
             PreviewSection(title: "Third", items: [
-                PreviewItem(title: "Item1", view: PreviewSample_Previews.self),
-                PreviewItem(title: "Item2", view: PreviewSample_Previews.self),
-                PreviewItem(title: "Item3", view: PreviewSample_Previews.self)
+                PreviewItem(title: "Item1", previewType: PreviewSample_Previews.self),
+                PreviewItem(title: "Item2", previewType: PreviewSample_Previews.self),
+                PreviewItem(title: "Item3", previewType: PreviewSample_Previews.self)
             ])
         ])
     }
