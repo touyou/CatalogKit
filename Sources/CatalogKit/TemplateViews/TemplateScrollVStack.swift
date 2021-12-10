@@ -20,7 +20,7 @@ public struct TemplateScrollVStack<Content: View>: View {
         ScrollView {
             VStack(spacing: 16.0) {
                 Text(title).font(.title.weight(.semibold))
-                VStack(spacing: 8.0) {
+                LazyVStack(spacing: 8.0) {
                     content()
                 }
             }
