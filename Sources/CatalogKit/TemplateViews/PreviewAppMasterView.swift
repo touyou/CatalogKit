@@ -10,6 +10,10 @@ import SwiftUI
 public struct PreviewAppMasterView: View {
     let previewSections: [PreviewSection]
     @State private var selectedPreview: PreviewItem?
+
+    public init(previewSections: [PreviewSection]) {
+        self.previewSections = previewSections
+    }
     
     public var body: some View {
         NavigationView {

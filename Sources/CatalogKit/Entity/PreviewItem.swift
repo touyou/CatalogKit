@@ -13,10 +13,7 @@ public struct PreviewItem {
     /// Component Preview
     let preview: AnyView
     
-    init<Content: View>(
-        title: String,
-        view: Content
-    ) {
+    public init<Content: View>(title: String, view: Content) {
         self.title = title
         self.preview = AnyView(view)
     }

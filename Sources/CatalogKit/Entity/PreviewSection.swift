@@ -12,4 +12,9 @@ public struct PreviewSection {
     let title: String
     /// PreviewItems
     let items: [PreviewItem]
+
+    public init(title: String, items: [PreviewItem]) {
+        self.title = title
+        self.items = items
+    }
 }
