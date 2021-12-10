@@ -9,8 +9,8 @@ let package = Package(
         .iOS(.v13)
     ],
     products: [
-        .library(name: "AppViews", targets: ["AppViews"]),
-        .library(name: "SampleComponent", targets: ["SampleComponent"]),
+        .library(name: "AppViews", type: .dynamic, targets: ["AppViews"]),
+        .library(name: "SampleComponent", type: .dynamic, targets: ["SampleComponent"]),
     ],
     dependencies: [
         .package(url: "https://github.com/touyou/CatalogKit", from: "1.0.0"),
