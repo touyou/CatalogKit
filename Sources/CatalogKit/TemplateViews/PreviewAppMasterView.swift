@@ -40,9 +40,12 @@ public struct PreviewAppMasterView: View {
             if let selectedPreview = selectedPreview {
                 selectedPreview.preview
             } else {
-                Text("プレビューするコンポーネントを選んでください")
-                    .font(.body)
-                    .foregroundColor(.gray)
+                VStack(alignment: .center) {
+                    Text("プレビューするコンポーネントを選んでください")
+                        .font(.body)
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
             }
         }
     }

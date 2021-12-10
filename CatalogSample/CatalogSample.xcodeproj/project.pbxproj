@@ -11,6 +11,7 @@
 		4390B4882761B9550037C6DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390B4872761B9550037C6DB /* ContentView.swift */; };
 		4390B48A2761B9570037C6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B4892761B9570037C6DB /* Assets.xcassets */; };
 		4390B48D2761B9570037C6DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B48C2761B9570037C6DB /* Preview Assets.xcassets */; };
+		43CE8E082762F9A5001DEC44 /* SampleComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E072762F9A5001DEC44 /* SampleComponent */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43CE8E082762F9A5001DEC44 /* SampleComponent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +39,7 @@
 			children = (
 				4390B4842761B9550037C6DB /* CatalogSample */,
 				4390B4832761B9550037C6DB /* Products */,
+				43CE8E062762F9A5001DEC44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +70,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		43CE8E062762F9A5001DEC44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +93,9 @@
 			dependencies = (
 			);
 			name = CatalogSample;
+			packageProductDependencies = (
+				43CE8E072762F9A5001DEC44 /* SampleComponent */,
+			);
 			productName = CatalogSample;
 			productReference = 4390B4822761B9550037C6DB /* CatalogSample.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,8 @@
 				Base,
 			);
 			mainGroup = 4390B4792761B9550037C6DB;
+			packageReferences = (
+			);
 			productRefGroup = 4390B4832761B9550037C6DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,7 +290,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,7 +319,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +356,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43CE8E072762F9A5001DEC44 /* SampleComponent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SampleComponent;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4390B47A2761B9550037C6DB /* Project object */;
 }
