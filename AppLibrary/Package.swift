@@ -13,7 +13,7 @@ let package = Package(
         .library(name: "SampleComponent", type: .dynamic, targets: ["SampleComponent"]),
     ],
     dependencies: [
-        .package(name: "CatalogKit", url: "https://github.com/touyou/CatalogKit", .branch("main")),
+        .package(name: "CatalogKit", url: "https://github.com/touyou/CatalogKit.git", .branch("main")),
     ],
     targets: [
         .target(name: "AppViews", dependencies: [
