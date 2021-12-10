@@ -8,7 +8,7 @@
       location = "group:CatalogSample/CatalogSample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SampleComponent/">
+      location = "group:AppLibrary/">
    </FileRef>
    <FileRef
       location = "group:">

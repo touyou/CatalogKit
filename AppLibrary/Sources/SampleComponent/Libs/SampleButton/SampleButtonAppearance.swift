@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  SampleButtonAppearance.swift
 //  
 //
 //  Created by emp-mac-yosuke-fujii on 2021/12/09.
@@ -17,7 +17,7 @@ public struct SampleButtonAppearance: ButtonAppearance {
     public let disabledBackgroundColor: Color
     public let minHeight: CGFloat
     public let isOutlined: Bool
-
+    
     static let largeFilled = SampleButtonAppearance(
         font: .headline,
         fontWeight: .semibold,
@@ -28,7 +28,7 @@ public struct SampleButtonAppearance: ButtonAppearance {
         minHeight: 44.0,
         isOutlined: false
     )
-
+    
     static let largeOutlined = SampleButtonAppearance(
         font: .headline,
         fontWeight: .semibold,
@@ -39,7 +39,7 @@ public struct SampleButtonAppearance: ButtonAppearance {
         minHeight: 44.0,
         isOutlined: true
     )
-
+    
     static let largePlane = SampleButtonAppearance(
         font: .headline,
         fontWeight: .semibold,
@@ -50,7 +50,7 @@ public struct SampleButtonAppearance: ButtonAppearance {
         minHeight: 44.0,
         isOutlined: false
     )
-
+    
     static let mediumFilled = SampleButtonAppearance(
         font: .body,
         fontWeight: .regular,
@@ -61,7 +61,7 @@ public struct SampleButtonAppearance: ButtonAppearance {
         minHeight: 36.0,
         isOutlined: false
     )
-
+    
     static let mediumOutlined = SampleButtonAppearance(
         font: .body,
         fontWeight: .regular,
@@ -72,7 +72,7 @@ public struct SampleButtonAppearance: ButtonAppearance {
         minHeight: 36.0,
         isOutlined: true
     )
-
+    
     static let mediumPlane = SampleButtonAppearance(
         font: .body,
         fontWeight: .regular,

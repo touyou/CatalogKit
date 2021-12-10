@@ -9,7 +9,6 @@ import UIKit
 import SampleComponent
 
 class ViewController: UIViewController {
-    @IBOutlet var sampleButton: SampleButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

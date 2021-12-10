@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UIFont+DynamicType.swift
 //  
 //
 //  Created by emp-mac-yosuke-fujii on 2021/12/09.

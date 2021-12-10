@@ -11,7 +11,7 @@
 		4390B4882761B9550037C6DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390B4872761B9550037C6DB /* ContentView.swift */; };
 		4390B48A2761B9570037C6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B4892761B9570037C6DB /* Assets.xcassets */; };
 		4390B48D2761B9570037C6DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B48C2761B9570037C6DB /* Preview Assets.xcassets */; };
-		43CE8E082762F9A5001DEC44 /* SampleComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E072762F9A5001DEC44 /* SampleComponent */; };
+		43CE8E0D27631265001DEC44 /* SampleComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E0C27631265001DEC44 /* SampleComponent */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43CE8E082762F9A5001DEC44 /* SampleComponent in Frameworks */,
+				43CE8E0D27631265001DEC44 /* SampleComponent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 			);
 			name = CatalogSample;
 			packageProductDependencies = (
-				43CE8E072762F9A5001DEC44 /* SampleComponent */,
+				43CE8E0C27631265001DEC44 /* SampleComponent */,
 			);
 			productName = CatalogSample;
 			productReference = 4390B4822761B9550037C6DB /* CatalogSample.app */;
@@ -358,7 +358,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		43CE8E072762F9A5001DEC44 /* SampleComponent */ = {
+		43CE8E0C27631265001DEC44 /* SampleComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SampleComponent;
 		};

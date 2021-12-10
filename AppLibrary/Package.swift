@@ -4,19 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "SampleComponent",
+    name: "AppLibrary",
     platforms: [
         .iOS(.v13)
     ],
     products: [
-        .library(
-            name: "SampleComponent",
-            targets: ["SampleComponent"]),
+        .library(name: "AppViews", targets: ["AppViews"]),
+        .library(name: "SampleComponent", targets: ["SampleComponent"]),
     ],
     dependencies: [
-        .package(url: "../../CatalogKit", from: "1.0.0"),
+        .package(url: "https://github.com/touyou/CatalogKit", from: "1.0.0"),
     ],
     targets: [
+        .target(name: "AppViews", dependencies: ["SampleComponent"]),
         .target(
             name: "SampleComponent",
             dependencies: ["CatalogKit"]),

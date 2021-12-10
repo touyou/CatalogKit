@@ -15,35 +15,15 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0f-Eb-cXM" customClass="SampleButton" customModule="SampleComponent">
-                                <rect key="frame" x="173.5" y="432.5" width="67" height="31"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="g0f-Eb-cXM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FxA-sW-ebw"/>
-                            <constraint firstItem="g0f-Eb-cXM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MVt-rm-pre"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="sampleButton" destination="g0f-Eb-cXM" id="84O-3P-eC8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="67"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="g0f-Eb-cXM">
-            <size key="intrinsicContentSize" width="67" height="31"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

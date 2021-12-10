@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  SampleButtonUIKit.swift
 //  
 //
 //  Created by emp-mac-yosuke-fujii on 2021/12/09.
@@ -45,21 +45,21 @@ public class SampleButton: UIButton {
             changeBorder()
         }
     }
-
+    
     public override var isEnabled: Bool {
         didSet {
             changeBackgroundColor()
             changeBorder()
         }
     }
-
+    
     public override var isHighlighted: Bool {
         didSet {
             changeBackgroundColor()
             changeBorder()
         }
     }
-
+    
     public func configureProps(
         font: UIFont,
         titleColor: UIColor,
@@ -79,17 +79,17 @@ public class SampleButton: UIButton {
         configure()
         layoutIfNeeded()
     }
-
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
-
+    
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
     }
-
+    
     private func configure() {
         layer.masksToBounds = true
         layer.cornerRadius = 10.0
@@ -102,7 +102,7 @@ public class SampleButton: UIButton {
         changeBorder()
         updateHeightConstraint()
     }
-
+    
     private func updateHeightConstraint() {
         translatesAutoresizingMaskIntoConstraints = false
         removeConstraints(constraints.filter { $0.firstAttribute == .height })
@@ -110,7 +110,7 @@ public class SampleButton: UIButton {
         addConstraint(heightConstraint)
         layoutIfNeeded()
     }
-
+    
     private func changeBackgroundColor() {
         if isEnabled {
             backgroundColor = isOutlined || defaultBackgroundColor == .clear ? .clear : defaultBackgroundColor.withAlphaComponent(isHighlighted ? 0.5 : 1.0)
@@ -118,7 +118,7 @@ public class SampleButton: UIButton {
             backgroundColor = isOutlined || disabledBackgroundColor == .clear ? .clear : disabledBackgroundColor.withAlphaComponent(isHighlighted ? 0.5 : 1.0)
         }
     }
-
+    
     private func changeBorder() {
         let borderColor = isEnabled ? defaultBackgroundColor : disabledBackgroundColor
         layer.borderColor = (isOutlined ? borderColor.withAlphaComponent(isHighlighted ? 0.5 : 1.0) : .clear).cgColor
@@ -140,7 +140,7 @@ public extension SampleButton {
         )
         return button
     }
-
+    
     static func largeOutlined() -> SampleButton {
         let button = SampleButton()
         button.configureProps(
@@ -154,7 +154,7 @@ public extension SampleButton {
         )
         return button
     }
-
+    
     static func largePlane() -> SampleButton {
         let button = SampleButton()
         button.configureProps(
@@ -168,7 +168,7 @@ public extension SampleButton {
         )
         return button
     }
-
+    
     static func mediumFilled() -> SampleButton {
         let button = SampleButton()
         button.configureProps(
@@ -182,7 +182,7 @@ public extension SampleButton {
         )
         return button
     }
-
+    
     static func mediumOutlined() -> SampleButton {
         let button = SampleButton()
         button.configureProps(
@@ -196,7 +196,7 @@ public extension SampleButton {
         )
         return button
     }
-
+    
     static func mediumPlane() -> SampleButton {
         let button = SampleButton()
         button.configureProps(
@@ -215,23 +215,23 @@ public extension SampleButton {
 public struct ViewWrapper: View {
     let view: SampleButton
     let title: String
-
+    
     public var body: some View {
         InternalViewWrapper(view: view, title: title)
             .frame(maxWidth: .infinity, minHeight: view.minHeight)
             .fixedSize(horizontal: false, vertical: true)
     }
-
+    
     private struct InternalViewWrapper: UIViewRepresentable {
         let view: SampleButton
         let title: String
         @Environment(\.isEnabled) private var isEnabled: Bool
-
+        
         public func makeUIView(context: Context) -> SampleButton {
             view.setTitle(title, for: .normal)
             return view
         }
-
+        
         public func updateUIView(_ uiView: SampleButton, context: Context) {
             uiView.isEnabled = isEnabled
         }
