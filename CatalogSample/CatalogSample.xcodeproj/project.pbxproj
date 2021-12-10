@@ -11,8 +11,23 @@
 		4390B4882761B9550037C6DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390B4872761B9550037C6DB /* ContentView.swift */; };
 		4390B48A2761B9570037C6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B4892761B9570037C6DB /* Assets.xcassets */; };
 		4390B48D2761B9570037C6DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B48C2761B9570037C6DB /* Preview Assets.xcassets */; };
-		43CE8E0D27631265001DEC44 /* SampleComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E0C27631265001DEC44 /* SampleComponent */; };
+		43CE8E1527631D4F001DEC44 /* SampleComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E1427631D4F001DEC44 /* SampleComponent */; };
+		43CE8E1627631D4F001DEC44 /* SampleComponent in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 43CE8E1427631D4F001DEC44 /* SampleComponent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		43CE8E1727631D4F001DEC44 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				43CE8E1627631D4F001DEC44 /* SampleComponent in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4390B4822761B9550037C6DB /* CatalogSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalogSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43CE8E0D27631265001DEC44 /* SampleComponent in Frameworks */,
+				43CE8E1527631D4F001DEC44 /* SampleComponent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +102,7 @@
 				4390B47E2761B9550037C6DB /* Sources */,
 				4390B47F2761B9550037C6DB /* Frameworks */,
 				4390B4802761B9550037C6DB /* Resources */,
+				43CE8E1727631D4F001DEC44 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -94,7 +110,7 @@
 			);
 			name = CatalogSample;
 			packageProductDependencies = (
-				43CE8E0C27631265001DEC44 /* SampleComponent */,
+				43CE8E1427631D4F001DEC44 /* SampleComponent */,
 			);
 			productName = CatalogSample;
 			productReference = 4390B4822761B9550037C6DB /* CatalogSample.app */;
@@ -358,7 +374,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		43CE8E0C27631265001DEC44 /* SampleComponent */ = {
+		43CE8E1427631D4F001DEC44 /* SampleComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SampleComponent;
 		};
