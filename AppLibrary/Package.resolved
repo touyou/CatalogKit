@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CatalogKit",
+        "repositoryURL": "https://github.com/touyou/CatalogKit.git",
+        "state": {
+          "branch": "main",
+          "revision": "5698b815228398c23515c839e5b845540d4bf986",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
