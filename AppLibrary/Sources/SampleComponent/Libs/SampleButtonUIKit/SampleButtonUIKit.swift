@@ -34,11 +34,7 @@ public class SampleButton: UIButton {
     @IBInspectable
     public var disabledBackgroundColor: UIColor = UIColor.gray
     @IBInspectable
-    public var minHeight: CGFloat = 44.0 {
-        didSet {
-            updateHeightConstraint()
-        }
-    }
+    public var minHeight: CGFloat = 44.0
     @IBInspectable
     public var isOutlined: Bool = false {
         didSet {
@@ -57,6 +53,17 @@ public class SampleButton: UIButton {
         didSet {
             changeBackgroundColor()
             changeBorder()
+        }
+    }
+
+    public override var intrinsicContentSize: CGSize {
+        self.sizeToFit()
+        if self.frame.height < self.minHeight {
+            var newSize = super.intrinsicContentSize
+            newSize.height = self.minHeight
+            return newSize
+        } else {
+            return super.intrinsicContentSize
         }
     }
     
@@ -100,15 +107,6 @@ public class SampleButton: UIButton {
         titleLabel?.font = titleFont
         changeBackgroundColor()
         changeBorder()
-        updateHeightConstraint()
-    }
-    
-    private func updateHeightConstraint() {
-        translatesAutoresizingMaskIntoConstraints = false
-        removeConstraints(constraints.filter { $0.firstAttribute == .height })
-        let heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: .none, attribute: .height, multiplier: 1, constant: minHeight)
-        addConstraint(heightConstraint)
-        layoutIfNeeded()
     }
     
     private func changeBackgroundColor() {
@@ -127,7 +125,7 @@ public class SampleButton: UIButton {
 }
 
 public extension SampleButton {
-    static func largeFilled() -> SampleButton {
+    static func largeFilled(title: String) -> SampleButton {
         let button = SampleButton()
         button.configureProps(
             font: UIFont.preferredFont(for: .headline, weight: .bold),
@@ -138,10 +136,11 @@ public extension SampleButton {
             minHeight: 44.0,
             isOutlined: false
         )
+        button.setTitle(title, for: .normal)
         return button
     }
     
-    static func largeOutlined() -> SampleButton {
+    static func largeOutlined(title: String) -> SampleButton {
         let button = SampleButton()
         button.configureProps(
             font: UIFont.preferredFont(for: .headline, weight: .bold),
@@ -152,10 +151,11 @@ public extension SampleButton {
             minHeight: 44.0,
             isOutlined: true
         )
+        button.setTitle(title, for: .normal)
         return button
     }
     
-    static func largePlane() -> SampleButton {
+    static func largePlane(title: String) -> SampleButton {
         let button = SampleButton()
         button.configureProps(
             font: UIFont.preferredFont(for: .headline, weight: .bold),
@@ -166,10 +166,11 @@ public extension SampleButton {
             minHeight: 44.0,
             isOutlined: false
         )
+        button.setTitle(title, for: .normal)
         return button
     }
     
-    static func mediumFilled() -> SampleButton {
+    static func mediumFilled(title: String) -> SampleButton {
         let button = SampleButton()
         button.configureProps(
             font: UIFont.preferredFont(for: .body, weight: .regular),
@@ -180,10 +181,11 @@ public extension SampleButton {
             minHeight: 40.0,
             isOutlined: false
         )
+        button.setTitle(title, for: .normal)
         return button
     }
     
-    static func mediumOutlined() -> SampleButton {
+    static func mediumOutlined(title: String) -> SampleButton {
         let button = SampleButton()
         button.configureProps(
             font: UIFont.preferredFont(for: .body, weight: .regular),
@@ -194,10 +196,11 @@ public extension SampleButton {
             minHeight: 40.0,
             isOutlined: true
         )
+        button.setTitle(title, for: .normal)
         return button
     }
     
-    static func mediumPlane() -> SampleButton {
+    static func mediumPlane(title: String) -> SampleButton {
         let button = SampleButton()
         button.configureProps(
             font:UIFont.preferredFont(for: .body, weight: .regular),
@@ -208,33 +211,8 @@ public extension SampleButton {
             minHeight: 40.0,
             isOutlined: false
         )
+        button.setTitle(title, for: .normal)
         return button
-    }
-}
-
-public struct ViewWrapper: View {
-    let view: SampleButton
-    let title: String
-    
-    public var body: some View {
-        InternalViewWrapper(view: view, title: title)
-            .frame(maxWidth: .infinity, minHeight: view.minHeight)
-            .fixedSize(horizontal: false, vertical: true)
-    }
-    
-    private struct InternalViewWrapper: UIViewRepresentable {
-        let view: SampleButton
-        let title: String
-        @Environment(\.isEnabled) private var isEnabled: Bool
-        
-        public func makeUIView(context: Context) -> SampleButton {
-            view.setTitle(title, for: .normal)
-            return view
-        }
-        
-        public func updateUIView(_ uiView: SampleButton, context: Context) {
-            uiView.isEnabled = isEnabled
-        }
     }
 }
 
@@ -242,33 +220,33 @@ struct SampleButtonUIKit_Previews: PreviewProvider {
     static var previews: some View {
         TemplateScrollVStack(title: "UIKit Button Styles") {
             HStack(spacing: 4.0) {
-                ViewWrapper(view: .largeFilled(), title: "Large Filled")
-                ViewWrapper(view: .largeFilled(), title: "Large Filled Disabled")
+                PreviewUIKitWrapper<SampleButton>(view: .largeFilled(title: "Large Filled"))
+                PreviewUIKitWrapper<SampleButton>(view: .largeFilled(title: "Large Filled Disabled"))
                     .disabled(true)
             }
             HStack(spacing: 4.0) {
-                ViewWrapper(view: .mediumFilled(), title: "Medium Filled")
-                ViewWrapper(view: .mediumFilled(), title: "Medium Filled Disabled")
+                PreviewUIKitWrapper<SampleButton>(view: .mediumFilled(title: "Medium Filled"))
+                PreviewUIKitWrapper<SampleButton>(view: .mediumFilled(title: "Medium Filled Disabled"))
                     .disabled(true)
             }
             HStack(spacing: 4.0) {
-                ViewWrapper(view: .largeOutlined(), title: "Large Outlined")
-                ViewWrapper(view: .largeOutlined(), title: "Large Outlined Disabled")
+                PreviewUIKitWrapper<SampleButton>(view: .largeOutlined(title: "Large Outlined"))
+                PreviewUIKitWrapper<SampleButton>(view: .largeOutlined(title: "Large Outlined Disabled"))
                     .disabled(true)
             }
             HStack(spacing: 4.0) {
-                ViewWrapper(view: .mediumOutlined(), title: "Medium Outlined")
-                ViewWrapper(view: .mediumOutlined(), title: "Medium Outlined Disabled")
+                PreviewUIKitWrapper<SampleButton>(view: .mediumOutlined(title: "Medium Outlined"))
+                PreviewUIKitWrapper<SampleButton>(view: .mediumOutlined(title: "Medium Outlined Disabled"))
                     .disabled(true)
             }
             HStack(spacing: 4.0) {
-                ViewWrapper(view: .largePlane(), title: "Large Plane")
-                ViewWrapper(view: .largePlane(), title: "Large Plane Disabled")
+                PreviewUIKitWrapper<SampleButton>(view: .largePlane(title: "Large Plane"))
+                PreviewUIKitWrapper<SampleButton>(view: .largePlane(title: "Large Plane Disabled"))
                     .disabled(true)
             }
             HStack(spacing: 4.0) {
-                ViewWrapper(view: .mediumPlane(), title: "Medium Plane")
-                ViewWrapper(view: .mediumPlane(), title: "Medium Plane Disabled")
+                PreviewUIKitWrapper<SampleButton>(view: .mediumPlane(title: "Medium Plane"))
+                PreviewUIKitWrapper<SampleButton>(view: .mediumPlane(title: "Medium Plane Disabled"))
                     .disabled(true)
             }
         }
