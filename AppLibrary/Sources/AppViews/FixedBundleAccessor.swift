@@ -10,9 +10,9 @@ import Foundation
 private class CurrentBundleFinder {}
 
 extension Foundation.Bundle {
-    static var figmaModule: Bundle = {
+    static var appViewModule: Bundle = {
         /* The name of your local package, prepended by "LocalPackages_" */
-        let bundleName = "AppLibrary_FigmaComponents"
+        let bundleName = "AppLibrary_AppViews"
         let candidates = [
             /* Bundle should be present here when the package is linked into an App. */
             Bundle.main.resourceURL,
@@ -32,3 +32,4 @@ extension Foundation.Bundle {
         fatalError("unable to find bundle named \(bundleName)")
     }()
 }
+

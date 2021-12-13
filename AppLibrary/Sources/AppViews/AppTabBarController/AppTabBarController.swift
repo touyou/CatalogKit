@@ -16,7 +16,7 @@ public final class AppTabBarController: UITabBarController {
     }
 
     private func createFirstView() -> UINavigationController {
-        let vc = FirstViewController.instantiate(in: Bundle.module)
+        let vc = FirstViewController.instantiate(in: Bundle.appViewModule)
         let navController = UINavigationController(rootViewController: vc)
         navController.tabBarItem = UITabBarItem(title: "First", image: UIImage(systemName: "house"), tag: 0)
         return navController

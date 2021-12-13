@@ -21,6 +21,8 @@ let package = Package(
             .target(name: "SampleComponent"),
             .target(name: "Library"),
             .target(name: "FigmaComponents")
+        ], resources: [
+            .process("FirstViewController/FirstViewController.storyboard")
         ]),
         .target(name: "FigmaComponents", dependencies: [], resources: [.process("Resource")]),
         .target(name: "Library", dependencies: []),
