@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4326D6A6276750C000444FF4 /* CatalogKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4326D6A5276750C000444FF4 /* CatalogKit */; };
 		4390B4862761B9550037C6DB /* CatalogSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390B4852761B9550037C6DB /* CatalogSampleApp.swift */; };
 		4390B48A2761B9570037C6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B4892761B9570037C6DB /* Assets.xcassets */; };
 		4390B48D2761B9570037C6DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4390B48C2761B9570037C6DB /* Preview Assets.xcassets */; };
@@ -30,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4326D6A82767512C00444FF4 /* AppLibrary */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppLibrary; path = ../AppLibrary; sourceTree = "<group>"; };
 		4390B4822761B9550037C6DB /* CatalogSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalogSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4390B4852761B9550037C6DB /* CatalogSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSampleApp.swift; sourceTree = "<group>"; };
 		4390B4892761B9570037C6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,16 +42,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C102F82763373A0004FDBB /* SampleComponent in Frameworks */,
-				4326D6A6276750C000444FF4 /* CatalogKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4326D6A72767512C00444FF4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4326D6A82767512C00444FF4 /* AppLibrary */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		4390B4792761B9550037C6DB = {
 			isa = PBXGroup;
 			children = (
+				4326D6A72767512C00444FF4 /* Packages */,
 				4390B4842761B9550037C6DB /* CatalogSample */,
 				43CE8E062762F9A5001DEC44 /* Frameworks */,
 				4390B4832761B9550037C6DB /* Products */,
@@ -110,7 +118,6 @@
 			name = CatalogSample;
 			packageProductDependencies = (
 				43C102F72763373A0004FDBB /* SampleComponent */,
-				4326D6A5276750C000444FF4 /* CatalogKit */,
 			);
 			productName = CatalogSample;
 			productReference = 4390B4822761B9550037C6DB /* CatalogSample.app */;
@@ -141,7 +148,6 @@
 			);
 			mainGroup = 4390B4792761B9550037C6DB;
 			packageReferences = (
-				4326D6A4276750C000444FF4 /* XCRemoteSwiftPackageReference "CatalogKit" */,
 			);
 			productRefGroup = 4390B4832761B9550037C6DB /* Products */;
 			projectDirPath = "";
@@ -373,23 +379,7 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		4326D6A4276750C000444FF4 /* XCRemoteSwiftPackageReference "CatalogKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/touyou/CatalogKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		4326D6A5276750C000444FF4 /* CatalogKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4326D6A4276750C000444FF4 /* XCRemoteSwiftPackageReference "CatalogKit" */;
-			productName = CatalogKit;
-		};
 		43C102F72763373A0004FDBB /* SampleComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SampleComponent;
