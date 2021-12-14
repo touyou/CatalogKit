@@ -22,9 +22,9 @@ public struct TemplateColorView: View {
     }
     
     public var body: some View {
-        TemplateScrollVStack(title: title) {
+        TemplateScrollVStack(title: title, spacing: 16.0) {
             ForEach(0 ..< sections.count, id: \.self) { sectionIndex in
-                VStack(alignment: .leading, spacing: 8.0) {
+                VStack(alignment: .leading, spacing: 12.0) {
                     Divider()
                     if let name = sections[sectionIndex].name {
                         Text(name).font(.title2.weight(.semibold))
@@ -46,14 +46,10 @@ public struct TemplateColorView: View {
         let color: PreviewColor
         
         var body: some View {
-            HStack(spacing: 8.0) {
-                ZStack {
-                    Circle()
-                        .fill(color.color)
-                    Circle()
-                        .strokeBorder(color.color, lineWidth: 2.0)
-                        .colorInvert()
-                }
+            HStack(spacing: 12.0) {
+                Circle()
+                    .fill(color.color)
+                    .shadow(color: Color(UIColor.lightGray), radius: 4.4)
                     .frame(width: 44.0, height: 44.0, alignment: .center)
                 Text(color.name).font(.body.weight(.semibold))
                 Spacer()

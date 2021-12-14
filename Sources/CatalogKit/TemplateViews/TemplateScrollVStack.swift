@@ -9,10 +9,12 @@ import SwiftUI
 
 public struct TemplateScrollVStack<Content: View>: View {
     let title: String
+    let spacing: CGFloat
     @ViewBuilder let content: () -> Content
 
-    public init(title: String, @ViewBuilder content: @escaping () -> Content) {
+    public init(title: String, spacing: CGFloat = 8.0, @ViewBuilder content: @escaping () -> Content) {
         self.title = title
+        self.spacing = spacing
         self.content = content
     }
 
@@ -20,7 +22,7 @@ public struct TemplateScrollVStack<Content: View>: View {
         ScrollView {
             VStack(spacing: 16.0) {
                 Text(title).font(.title.weight(.semibold))
-                LazyVStack(spacing: 8.0) {
+                LazyVStack(spacing: spacing) {
                     content()
                 }
             }
